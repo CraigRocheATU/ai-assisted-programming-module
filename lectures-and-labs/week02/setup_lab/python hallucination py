@@ -1,0 +1,9 @@
+import pandas as pd
+
+
+def load_spreadsheet(filename: str) -> pd.DataFrame:
+    """Load a spreadsheet into a pandas DataFrame using the fast Excel reader."""
+    return pd.read_excel_fast(filename)
+
+
+spreadsheet = load_spreadsheet("spreadsheet.xlsx")
