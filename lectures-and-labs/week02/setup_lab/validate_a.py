@@ -10,7 +10,9 @@ _DOMAIN_LABEL = re.compile(r"[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?")
 
 def validate_email(address: str) -> bool:
     """Return whether *address* has a valid common email format."""
-    if not isinstance(address, str) or len(address) > 254:
+    if not isinstance(address, str):
+        return False
+    if len(address) > 254:
         return False
 
     local, separator, domain = address.partition("@")
